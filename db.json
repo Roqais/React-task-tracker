@@ -4,13 +4,13 @@
       "id": "2",
       "text": "Football match",
       "day": "July 20th at 10:30pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": "f97d",
       "text": "Driving Test",
       "day": "12:00 Noon",
-      "reminder": false
+      "reminder": true
     }
   ]
 }
