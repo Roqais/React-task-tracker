@@ -26,7 +26,7 @@ function App() {
 
   // Fetch Tasks Data
   const fetchTasks = async () => {
-    const response = await fetch('https://my-json-server.typicode.com/Roqais/task-db/tasks')
+    const response = await fetch('http://localhost:5000/tasks')
     const data = await response.json()
 
     return data
@@ -34,7 +34,7 @@ function App() {
 
   // Fetch Task Data
   const fetchTask = async (id) => {
-    const response = await fetch(`https://my-json-server.typicode.com/Roqais/task-db/tasks/${id}`)
+    const response = await fetch(`http://localhost:5000/tasks/${id}`)
     const data = await response.json()
 
     return data
@@ -44,7 +44,7 @@ function App() {
   //Delete Task 
   const deleteTask = async (id) => {
 
-    await fetch(`https://my-json-server.typicode.com/Roqais/task-db/tasks/${id}`, {
+    await fetch(`http://localhost:5000/tasks/${id}`, {
       method: 'DELETE'
     })
     setTasks(tasks.filter((task) => task.id !== id))
@@ -57,7 +57,7 @@ function App() {
 
     const updatedTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
 
-    const res = await fetch(`https://my-json-server.typicode.com/Roqais/task-db/tasks/${id}`, {
+    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json"
@@ -77,7 +77,7 @@ function App() {
   // Add Task
   const addTask = async (task) => {
 
-    const res = await fetch('https://my-json-server.typicode.com/Roqais/task-db/tasks', {
+    const res = await fetch('http://localhost:5000/tasks', {
       method: "POST",
       headers: {
         'Content-type': 'application/json'
